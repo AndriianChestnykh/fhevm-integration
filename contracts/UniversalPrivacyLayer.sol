@@ -57,6 +57,7 @@ contract UniversalPrivacyLayer is SepoliaConfig, Ownable2Step {
         euint128 encryptedAmount = FHE.fromExternal(inputAmount, inputProof);
 
         address caller = msg.sender;
+
         ebool isInsufficient = FHE.lt(_userBalances[caller], encryptedAmount);
         euint128 originalBalance = euint128(_userBalances[caller]);
         _userBalances[caller] = FHE.select(
@@ -73,7 +74,6 @@ contract UniversalPrivacyLayer is SepoliaConfig, Ownable2Step {
 
         FHE.allowThis(_userBalances[caller]);
         FHE.allow(_userBalances[caller], caller);
-        FHE.allow(euint128.wrap(_pendingDeposits.get(caller)), address(this));
     }
 
     function initBulkDepositToVault() external onlyOwner {
