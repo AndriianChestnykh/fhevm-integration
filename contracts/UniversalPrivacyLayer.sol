@@ -210,20 +210,4 @@ contract UniversalPrivacyLayer is SepoliaConfig, Ownable2Step {
     }
 }
 
-// DO
-// 1. Write NatSpec
-// 2. Write unit tests
 
-// TODO
-// 1. Multi-token support
-// 2. Multi-vault support
-// 3. Can the privacy layer itself be a vault?
-// 4. Zero amounts checks
-// 5. Check if key was already present
-// 6. Handle different amount when withdrawing from what was originally deposited, so manage privaty yield distribution
-// 7. Make gas optimizations to avoid endless loops when requqesting decryption
-// 8. Figure out how to check check if balance values fit uint128, as all token balances are uint256
-// 9. Not sure if FHE.toBytes32(_userBalances[caller]) == bytes32(0) will work as expected with non existent keys
-
-// NOTES
-// 1. Integrate with ERC4626 but yVaults are compatible with ERC4626
