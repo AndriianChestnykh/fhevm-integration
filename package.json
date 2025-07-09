@@ -76,6 +76,7 @@
     "postcompile": "npm run typechain",
     "prettier:check": "prettier --check \"**/*.{js,json,md,sol,ts,yml}\"",
     "prettier:write": "prettier --write \"**/*.{js,json,md,sol,ts,yml}\"",
+    "prettier:contracts": "prettier --write --plugin=prettier-plugin-solidity 'contracts/**/UniversalPrivacyLayer.sol' ",
     "test": "hardhat test",
     "build:ts": "tsc --project tsconfig.json",
     "typechain": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat typechain"
